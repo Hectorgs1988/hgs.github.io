@@ -62,4 +62,10 @@ button {
     margin-top: 50px;
 }
 
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 

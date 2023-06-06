@@ -37,9 +37,24 @@ class Producto {
 // Crea un array de productos
 let productos = [
     new Producto("Manzana", "Frutas y vegetales", "img/manzana.jpg"),
-    new Producto("Espagueti", "Panes y pastas", "img/espagueti.jpg"),
+    new Producto("Naranja", "Frutas y vegetales", "img/naranja.jpg"),
+    new Producto("Pera", "Frutas y vegetales", "img/pera.jpg"),
+    new Producto("Sandia", "Frutas y vegetales", "img/sandia.jpg"),
+
+    new Producto("Barra", "Panes y pastas", "img/barra.jpg"),
+    new Producto("Hogaza", "Panes y pastas", "img/hogaza.jpg"),
+    new Producto("Pastas de te", "Panes y pastas", "img/pastasTe.jpg"),
+    new Producto("Croissant", "Panes y pastas", "img/croissant.jpg"),
+
     new Producto("Leche", "Leche y quesos", "img/leche.jpg"),
-    // Añade más productos aquí
+    new Producto("Rulo de queso de cabra", "Leche y quesos", "img/quesoCabra.jpg"),
+    new Producto("Cuajada", "Leche y quesos", "img/cuajada.jpg"),
+
+    new Producto("Filete", "Carne y pescado", "img/leche.jpg"),
+
+    new Producto("Cereales", "Cereales y pastas", "img/espagueti.jpg"),
+
+
 ];
 
 // Obtén una referencia al div de categorías
