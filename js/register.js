@@ -21,5 +21,5 @@ document.getElementById("registerButton").addEventListener("click", function(eve
   localStorage.setItem(u, JSON.stringify(user));
 
   // Redirige al usuario a la página de inicio de sesión después de registrarse con éxito
-  window.location.href="login.html";
+  window.location.href="index.html";
 });

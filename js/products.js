@@ -36,22 +36,28 @@ class Producto {
 
 // Crea un array de productos
 let productos = [
+    //Categoria Frutas y vegetales
     new Producto("Manzana", "Frutas y vegetales", "img/manzana.jpg"),
     new Producto("Naranja", "Frutas y vegetales", "img/naranja.jpg"),
     new Producto("Pera", "Frutas y vegetales", "img/pera.jpg"),
     new Producto("Sandia", "Frutas y vegetales", "img/sandia.jpg"),
 
+
+    // Categoria Panes y pastas
     new Producto("Barra", "Panes y pastas", "img/barra.jpg"),
     new Producto("Hogaza", "Panes y pastas", "img/hogaza.jpg"),
     new Producto("Pastas de te", "Panes y pastas", "img/pastasTe.jpg"),
     new Producto("Croissant", "Panes y pastas", "img/croissant.jpg"),
 
+    // Categoria Leche y quesos
     new Producto("Leche", "Leche y quesos", "img/leche.jpg"),
     new Producto("Rulo de queso de cabra", "Leche y quesos", "img/quesoCabra.jpg"),
     new Producto("Cuajada", "Leche y quesos", "img/cuajada.jpg"),
 
+    // Categoria Carne y pescado
     new Producto("Filete", "Carne y pescado", "img/leche.jpg"),
 
+    // Categoria Cereales y pastas
     new Producto("Cereales", "Cereales y pastas", "img/espagueti.jpg"),
 
 
@@ -83,6 +89,7 @@ categorias.forEach(categoria => {
     divCategorias.appendChild(botonCategoria);
 });
 
+
 function mostrarProductos(categoria) {
     // Obtén una referencia al div de productos
     let divProductos = document.getElementById("productos");
@@ -111,6 +118,8 @@ function mostrarProductos(categoria) {
         divProductos.appendChild(imgProducto);
     });
 }
+
+
 
 // Asegúrate de que tu DOM está completamente cargado antes de intentar seleccionar elementos o añadir manejadores de eventos
 document.addEventListener("DOMContentLoaded", function() {

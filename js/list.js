@@ -122,6 +122,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Evento para el boton de imprimir lista
+document.addEventListener("DOMContentLoaded", function() {
+
+    document.getElementById("printButton").addEventListener("click", function() {
+        window.print();
+    });
+});
+
+
+
 
 
 
