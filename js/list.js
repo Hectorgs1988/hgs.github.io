@@ -35,28 +35,96 @@ class List {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener todas las claves de localStorage
+    let keys = Object.keys(localStorage);
+
+    // Filtrar solo las claves que tienen formato de fecha ISO
+    let listKeys = keys.filter(key => {
+        return /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/.test(key);
+    });
+
+    // Si no hay ninguna lista guardada
+    if (listKeys.length === 0) {
+        console.log('No hay ninguna lista guardada.');
+        return;
+    }
+
+    // Ordenar las claves en orden descendente
+    listKeys.sort().reverse();
+
+    // Obtener la última lista de la compra
+    let ultimaListaCompra = JSON.parse(localStorage.getItem(listKeys[0]));
+
+    console.log(ultimaListaCompra);
+});
+
+
+function getUltimaLista() {
+    // Obtén todas las claves de localStorage
+    let keys = Object.keys(localStorage);
+
+    // Filtrar solo las claves que tienen formato de fecha ISO
+    let listKeys = keys.filter(key => {
+        return /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/.test(key);
+    });
+
+    // Si no hay ninguna lista guardada
+    if (listKeys.length === 0) {
+        console.log('No hay ninguna lista guardada.');
+        return null;
+    }
+
+    // Ordenar las claves en orden descendente
+    listKeys.sort().reverse();
+
+    // Obtener la última lista de la compra
+    let ultimaListaCompra = JSON.parse(localStorage.getItem(listKeys[0]));
+
+    return ultimaListaCompra;
+}
+
+function mostrarLista(lista) {
+    let contenedorLista = document.getElementById('listaCompras');
+    contenedorLista.innerHTML = '';
+
+    // Agrega un título a la lista
+    let tituloElemento = document.createElement('h1');
+    tituloElemento.textContent = "¡Tu lista de la compra, para que no se te olvide nada!";
+    contenedorLista.appendChild(tituloElemento);
+
+    // Agrega la fecha a la lista
+    let fechaElemento = document.createElement('p');
+    let fechaLista = new Date(lista.fecha);
+    fechaElemento.textContent = `Fecha: ${fechaLista.getFullYear()}-${(fechaLista.getMonth()+1).toString().padStart(2, '0')}-${fechaLista.getDate().toString().padStart(2, '0')} ${fechaLista.getHours().toString().padStart(2, '0')}:${fechaLista.getMinutes().toString().padStart(2, '0')}`;
+    contenedorLista.appendChild(fechaElemento);
+
+    // Agrega los productos a la lista
+    lista.productos.forEach(producto => {
+        let elementoProducto = document.createElement('p');
+        elementoProducto.textContent = producto.producto + ': ' + producto.cantidad;
+        contenedorLista.appendChild(elementoProducto);
+    });
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    let divListas = document.getElementById('listas');
-    // Utiliza la clave 'listaCompra' para recuperar la última lista guardada
-    let listaGuardada = JSON.parse(localStorage.getItem('listaCompra'));
+    // Código para obtener la última lista...
+    let ultimaListaCompra = getUltimaLista();
 
-    // Comprueba si hay una lista guardada
-    if (listaGuardada && listaGuardada.productos) {
-        let pFecha = document.createElement('p');
-        pFecha.textContent = `Fecha: ${listaGuardada.fecha}`;
-        divListas.appendChild(pFecha);
-
-        listaGuardada.productos.forEach(item => {
-            let pItem = document.createElement('p');
-            pItem.textContent = `Producto: ${item.producto}, Cantidad: ${item.cantidad}`;
-            divListas.appendChild(pItem);
-        });
+    // Mostrar la última lista
+    if(ultimaListaCompra) {
+        mostrarLista(ultimaListaCompra);
     } else {
-        console.log("No hay listas guardadas");
+        console.log('No hay ninguna lista guardada.');
     }
 });
+
+
+
+
+
 
 
 

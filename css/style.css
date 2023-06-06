@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e4dede;
+}
+
+/*FORMULARIO DE INICIO DE SESION*/
+#loginForm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; 
+    padding: 20px;
+    background-color: rgb(197, 197, 197);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    text-align: center;  /* Alineación de elementos al centro */
+}
+
+
+/*ESTILOS DE BOTONES E INPUT*/
+input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block; /* Hace que los elementos de entrada sean bloques para que tengan su propia línea */
+    margin: 0 auto; /* Centra los elementos de entrada en su línea */
+}
+
+button {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    display: block; /* Hace que los botones sean bloques para que tengan su propia línea */
+    margin: 10px auto; /* Centra los botones en su línea y añade un margen de 10px arriba y abajo */
+}
+
+/* Estilo para el botón de registro */
+#registerButton {
+    background-color: #28a745;  /* Un tono de verde */
+}
+
+
+/*ESTILOS PARA EL FORMULARIO DE REGISTRO*/
+#registerForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; 
+    padding: 20px;
+    background-color: rgb(197, 197, 197);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    text-align: center;  /* Alineación de elementos al centro */
+}
+
+#guardar{
+    margin-top: 50px;
+}
+
+
