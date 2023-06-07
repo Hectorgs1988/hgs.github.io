@@ -4,26 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" width=device-width, initial-scale=1.0, maximun-scale=1.0, user-scalabe=0>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
 
     <body>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> -->
+
+        <i class="fas fa-arrow-left back-button" onclick="history.back()"></i> 
       
-        
-
-        <!-- <form id="registerForm">
-            <input type="text" id="nombre" placeholder="Nombre" required>
-            <input type="text" id="Apellidos" placeholder="Apellidos" required>
-            <input type="text" id="Direccion" placeholder="Direccion" required>
-            <input type="text" id="Poblacion" placeholder="Población" required>
-            <input type="number" id="postal" placeholder="Codigo postal" required>
-            <input type="number" id="Telefono" placeholder="Telefono" required>
-            <input type="text" id="Email" placeholder="Email" required>
-            <input type="text" id="Usuario" placeholder="Usuario" required>
-            <input type="password" id="Contraseña" placeholder="Contraseña" required>
-            <button  id="registerButton">Registrarse</button>
-        </form> -->
-
         <form id="registroFormulario">
             <input type="text" id="nombre" placeholder="Nombre" name="nombre" required><br>
             <input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" required><br>
@@ -37,8 +24,6 @@
             <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" name="confirmPassword" required><br>
             <input type="submit" value="Registrarse">
         </form>
-        
-
         
         <script src="js/user.js"></script>
         <script src="js/register.js"></script>

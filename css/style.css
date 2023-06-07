@@ -1,6 +1,24 @@
+:root {
+    --primary-color: #f8f6eb;
+    --secondary-color: #1f7551;
+    --tertiary-color: #1f7551;
+    /* Y así sucesivamente para el resto de tus colores */
+  }
+
+  
+h1 {
+    color: var(--secondary-color);
+  }
+  
+  p {
+    color: var(--tertiary-color);
+    font-weight: bold;
+  }
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #e4dede;
+    background-color: var(--primary-color);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -13,9 +31,10 @@ body {
     transform: translate(-50%, -50%);
     width: 300px; 
     padding: 20px;
-    background-color: rgb(197, 197, 197);
+    background-color: #1f7551;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     text-align: center;  /* Alineación de elementos al centro */
+    border-radius: 15px;
 }
 
 
@@ -25,7 +44,7 @@ input {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #1f7551;
     display: block; /* Hace que los elementos de entrada sean bloques para que tengan su propia línea */
     margin: 0 auto; /* Centra los elementos de entrada en su línea */
 }
@@ -35,16 +54,28 @@ button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
+    background-color:#ffe177;
+    color: #1f7551;
     display: block; /* Hace que los botones sean bloques para que tengan su propia línea */
     margin: 10px auto; /* Centra los botones en su línea y añade un margen de 10px arriba y abajo */
+    font-weight: bold;
 }
 
-/* Estilo para el botón de registro */
+/* Estilo para el botón de nuevo usuario */
 #registerButton {
-    background-color: #28a745;  /* Un tono de verde */
+    background-color: #9dc2b7;  /* Un tono de verde */
+    color: #1f7551;
+    
 }
+
+/*BOTON DE REGISTRARSE DENTRO DEL FORMULARIO DE REGISTRO */
+input[type='submit'] {
+    background-color: #ffe177; /* Sustituye esto por el color de fondo que desees */
+    color: #1f7551; /* Sustituye esto por el color de texto que desees */
+    font-weight: bold;
+  }
+  
+  
 
 
 /*ESTILOS PARA EL FORMULARIO DE REGISTRO*/
@@ -55,23 +86,47 @@ button {
     transform: translate(-50%, -50%);
     width: 300px; 
     padding: 20px;
-    background-color: rgb(197, 197, 197);
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    text-align: center;  /* Alineación de elementos al centro */
+    background-color: #1f7551;
+    box-shadow: 0px 0px 10px #1f7551;
+    text-align: center;
+    border-radius: 15px;
 }
+
+input {
+    background-color: #f8f6eb; /* Sustituye esto por tu color de fondo deseado */
+  }
+  
+  input::placeholder {
+    color: #1f7551; /* Sustituye esto por tu color de placeholder deseado */
+  }
+  
+
+/*SELECT DENTRO DEL FORMULARIO DE REGISTRO*/
+#registroFormulario select {
+    width: 90%; /* Asegura que ocupa todo el ancho disponible */
+    height: 35px; /* Elige la altura que prefieras */
+    margin-bottom: 10px; /* Margen inferior, similar a los inputs */
+    padding: 5px; /* Espacio interior para el texto */
+    font-size: 14px; /* Tamaño de la fuente */
+    border: none; /* Elimina el borde por defecto */
+    border-radius: 3px; /* Añade esquinas redondeadas */
+    background-color: #f8f6eb; /* Color de fondo */
+    color: #1f7551;
+}
+
 
 #guardar{
     margin-top: 50px;
-    background-color: #28a745;
+    background-color: #9dc2b7;
     
 }
 
 #mostrar{
-    background-color: #28a745;
+    background-color: #9dc2b7;
 }
 
 #listasBoton{
-    background-color: #28a745;
+    background-color: #9dc2b7;
 }
 
 #productos {
@@ -112,8 +167,8 @@ button {
     position: fixed; 
     bottom: 20px; 
     right: 20px;
-    background-color: #008000;
-    color: white;
+    background-color: #1f7551;
+    color: #ffe177;
     padding: 15px;
     border-radius: 5px;
     opacity: 0;
@@ -133,7 +188,7 @@ button {
     top: 10px;
     left: 10px;
     margin-left: 150px;
-    color: #2b2c2b;
+    color: #1f7551;
 }
 
 
