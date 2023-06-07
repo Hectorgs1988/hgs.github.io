@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #e4dede;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /*FORMULARIO DE INICIO DE SESION*/
@@ -46,7 +48,7 @@ button {
 
 
 /*ESTILOS PARA EL FORMULARIO DE REGISTRO*/
-#registerForm {
+#registroFormulario {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,6 +76,7 @@ button {
 
 #productos {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -82,6 +85,60 @@ button {
         display: none;
     }
 }
+
+.categoria {
+    margin-bottom: 20px;
+}
+
+.productosCategoria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.producto {
+    margin: 10px;
+    text-align: center;
+}
+
+.producto img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*MENSAJE TEMPORAL*/
+#message {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    background-color: #008000;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1000;
+}
+
+#message.show {
+    opacity: 1;
+}
+
+/*BOTON REGRESAR*/
+.back-button {
+    font-size: 34px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 150px;
+    color: #2b2c2b;
+}
+
+
+
+
 
 
 

@@ -39,8 +39,8 @@ let productos = [
     //Categoria Frutas y vegetales
     new Producto("Manzana", "Frutas y vegetales", "img/manzana.jpg"),
     new Producto("Naranja", "Frutas y vegetales", "img/naranja.jpg"),
-    new Producto("Pera", "Frutas y vegetales", "img/pera.jpg"),
-    new Producto("Sandia", "Frutas y vegetales", "img/sandia.jpg"),
+    new Producto("Pimiento rojo", "Frutas y vegetales", "img/pimiento.jpg"),
+    new Producto("Calabacin", "Frutas y vegetales", "img/calabacin.jpg"),
 
 
     // Categoria Panes y pastas
@@ -52,13 +52,20 @@ let productos = [
     // Categoria Leche y quesos
     new Producto("Leche", "Leche y quesos", "img/leche.jpg"),
     new Producto("Rulo de queso de cabra", "Leche y quesos", "img/quesoCabra.jpg"),
+    new Producto("Queso tierno", "Leche y quesos", "img/quesoTierno.jpg"),
     new Producto("Cuajada", "Leche y quesos", "img/cuajada.jpg"),
 
     // Categoria Carne y pescado
-    new Producto("Filete", "Carne y pescado", "img/leche.jpg"),
+    new Producto("Filete de ternera", "Carne y pescado", "img/filete.jpg"),
+    new Producto("Pollo", "Carne y pescado", "img/pollo.jpg"),
+    new Producto("Lubina", "Carne y pescado", "img/lubina.jpg"),
+    new Producto("Pulpo", "Carne y pescado", "img/pulpo.jpg"),
 
     // Categoria Cereales y pastas
-    new Producto("Cereales", "Cereales y pastas", "img/espagueti.jpg"),
+    new Producto("Arroz", "Cereales y pastas", "img/arroz.jpg"),
+    new Producto("Pasta fresca", "Cereales y pastas", "img/pastaFresca.jpg"),
+    new Producto("Avena", "Cereales y pastas", "img/avena.jpg"),
+    new Producto("Quinoa", "Cereales y pastas", "img/quinoa.jpg"),
 
 
 ];
@@ -76,48 +83,89 @@ productos.forEach(producto => {
     }
 });
 
+
+// Crea una variable para almacenar la última categoría que se mostró
+let ultimaCategoriaMostrada = null;
+
 // Crea un botón para cada categoría y añádelo al div de categorías
 categorias.forEach(categoria => {
+    let divCategoria = document.createElement("div");
+    divCategoria.className = "categoria";
+
     let botonCategoria = document.createElement("button");
     botonCategoria.innerText = categoria;
 
-    // Añade un evento de clic al botón
+    let divProductosCategoria = document.createElement("div");
+    divProductosCategoria.className = "productosCategoria";
+
     botonCategoria.addEventListener("click", function() {
-        mostrarProductos(categoria);
+        if (categoria === ultimaCategoriaMostrada) {
+            // Si la categoría que se hizo clic es la misma que la última que se mostró, limpia el div de los productos y establece la última categoría mostrada a null
+            divProductosCategoria.innerHTML = "";
+            ultimaCategoriaMostrada = null;
+        } else {
+            // Si no, muestra los productos como normalmente y actualiza la última categoría mostrada
+            mostrarProductos(categoria, divProductosCategoria);
+            ultimaCategoriaMostrada = categoria;
+        }
     });
 
-    divCategorias.appendChild(botonCategoria);
+    divCategoria.appendChild(botonCategoria);
+    divCategoria.appendChild(divProductosCategoria);
+    divCategorias.appendChild(divCategoria);
 });
 
+function mostrarProductos(categoria, divProductosCategoria) {
+    divProductosCategoria.innerHTML = "";
 
-function mostrarProductos(categoria) {
-    // Obtén una referencia al div de productos
-    let divProductos = document.getElementById("productos");
-
-    // Limpia el div de productos
-    divProductos.innerHTML = "";
-
-    // Muestra los productos de la categoría seleccionada
     productos.filter(producto => producto.getTipo() === categoria).forEach(producto => {
+        let divProducto = document.createElement("div");
+        divProducto.className = "producto";
+
         let imgProducto = document.createElement("img");
         imgProducto.src = producto.getEnlace();
         imgProducto.alt = producto.getNombre();
 
-        // Añade un evento de clic a la imagen del producto
+        let pNombre = document.createElement('p');
+        pNombre.textContent = producto.getNombre();
+
         imgProducto.addEventListener("click", function() {
             let cantidad = prompt("¿Cuántas unidades de este producto quieres?", "1");
-
-            // Aquí puedes añadir el producto y la cantidad seleccionada a la lista de la compra del usuario
+        
             if (cantidad !== null) {
                 let productoCompra = { producto: producto.getNombre(), cantidad: cantidad };
                 listaCompra.push(productoCompra);
                 localStorage.setItem('listaCompra', JSON.stringify(listaCompra));
+        
+                // Crear el elemento de mensaje y añadirlo al body
+                let message = document.createElement('div');
+                message.id = 'message';
+                message.textContent = 'Producto añadido correctamente';
+                document.body.appendChild(message);
+        
+                // Mostrar el mensaje y luego ocultarlo después de 2 segundos
+                message.classList.add('show');
+                setTimeout(function() {
+                    message.classList.remove('show');
+        
+                    // Remove the message element after it has faded out
+                    setTimeout(function() {
+                        document.body.removeChild(message);
+                    }, 500);
+                }, 2000);
             }
         });
+        
 
-        divProductos.appendChild(imgProducto);
+        divProducto.appendChild(pNombre);
+        divProducto.appendChild(imgProducto);
+        divProductosCategoria.appendChild(divProducto);
     });
 }
+
+
+
+
 
 
 
@@ -132,7 +180,25 @@ document.addEventListener("DOMContentLoaded", function() {
         listaCompra = [];
         console.log('Lista de la compra guardada');
         console.log(localStorage);
+    
+        // Crear el elemento de mensaje y añadirlo al body
+        let message = document.createElement('div');
+        message.id = 'message';
+        message.textContent = 'Lista guardada correctamente';
+        document.body.appendChild(message);
+    
+        // Mostrar el mensaje y luego ocultarlo después de 2 segundos
+        message.classList.add('show');
+        setTimeout(function() {
+            message.classList.remove('show');
+    
+            // Eliminar el elemento de mensaje después de que se haya desvanecido
+            setTimeout(function() {
+                document.body.removeChild(message);
+            }, 500);
+        }, 2000);
     });
+    
     
 
 
@@ -191,12 +257,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-
-
-    
-
-
 });
+
+
 
 
 

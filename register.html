@@ -11,10 +11,7 @@
       
         
 
-        <form id="registerForm">
-            <!--Aqui colocar los campos requeridos para el registro de un nuevo usuario (nombre, apellidos, direccion, etc)
-            METER LOS INPUTS NECEARIOS-->
-
+        <!-- <form id="registerForm">
             <input type="text" id="nombre" placeholder="Nombre" required>
             <input type="text" id="Apellidos" placeholder="Apellidos" required>
             <input type="text" id="Direccion" placeholder="Direccion" required>
@@ -25,7 +22,22 @@
             <input type="text" id="Usuario" placeholder="Usuario" required>
             <input type="password" id="Contraseña" placeholder="Contraseña" required>
             <button  id="registerButton">Registrarse</button>
+        </form> -->
+
+        <form id="registroFormulario">
+            <input type="text" id="nombre" placeholder="Nombre" name="nombre" required><br>
+            <input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" required><br>
+            <input type="text" id="direccion" placeholder="Direccion" name="direccion" required><br>
+            <select id="poblacion" name="poblacion" required></select><br>
+            <input type="text" id="postalCode" placeholder="Codigo Postal" name="postalCode" required><br>
+            <input type="tel" id="telefono" placeholder="Telefono" name="telefono" required><br>
+            <input type="email" id="email" placeholder="Email" name="email" required><br>
+            <input type="text" id="username" placeholder="Nombre de usuario" name="username" required><br>
+            <input type="password" id="password" placeholder="Contraseña" name="password" required><br>
+            <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" name="confirmPassword" required><br>
+            <input type="submit" value="Registrarse">
         </form>
+        
 
         
         <script src="js/user.js"></script>
