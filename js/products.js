@@ -179,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem(formattedDate, JSON.stringify(listaCompraConFecha));
         listaCompra = [];
         console.log('Lista de la compra guardada');
-        console.log(localStorage);
     
         // Crear el elemento de mensaje y añadirlo al body
         let message = document.createElement('div');
@@ -253,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let separator = document.createElement('hr'); // Agrega una línea horizontal entre las listas
                 divListas.appendChild(separator);
             } else {
-                console.log("No hay listas guardadas");
+
             }
         });
     });

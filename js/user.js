@@ -1,3 +1,4 @@
+//Clase usuario
 class Usuario {
     constructor(nombre, apellidos, direccion, poblacion, codigoPostal, telefono, correoElectronico, usuario, contraseña) {
       this.nombre = nombre;
@@ -23,7 +24,6 @@ class Usuario {
         usuario: user.usuario,
         contraseña: user.contraseña,
       }
-
       localStorage.setItem('currentUser', JSON.stringify(userObj));
     }
 
@@ -120,41 +120,28 @@ class Usuario {
    
     //Guardar usuario
     guardarUsuario() {
-    Usuario.serialize(this);
-    }
-
-    // Métodos para guardar y recuperar los datos del usuario en el localStorage
-    // guardarUsuario() {
-    //   localStorage.setItem(this.usuario, JSON.stringify(this));
-    // }
-  
-    recuperarUsuario() {
-      let usuarioGuardado = localStorage.getItem(this.usuario);
-      if(usuarioGuardado) {
-        let usuario = JSON.parse(usuarioGuardado);
-        this.nombre = usuario.nombre;
-        this.apellidos = usuario.apellidos;
-        this.direccion = usuario.direccion;
-        this.poblacion = usuario.poblacion;
-        this.codigoPostal = usuario.codigoPostal;
-        this.telefono = usuario.telefono;
-        this.correoElectronico = usuario.correoElectronico;
-        this.usuario = usuario.usuario;
-        this.contraseña = usuario.contraseña;
-
-
-        //...REVISAR PROPIEDAD USUARIO
-      }
-    }
+      Usuario.serialize(this);
   }
 
+   
+  recuperarUsuario() {
+    let usuarioGuardado = localStorage.getItem(this.usuario);
+    if(usuarioGuardado) {
+      let usuario = JSON.parse(usuarioGuardado);
+      this.nombre = usuario.nombre;
+      this.apellidos = usuario.apellidos;
+      this.direccion = usuario.direccion;
+      this.poblacion = usuario.poblacion;
+      this.codigoPostal = usuario.codigoPostal;
+      this.telefono = usuario.telefono;
+      this.correoElectronico = usuario.correoElectronico;
+      this.usuario = usuario.usuario;
+      this.contraseña = usuario.contraseña;
+    }
+  }
+}
+
   
-  
-  // Uso de la clase Usuario
-  // let usuario1 = new Usuario("Nombre", "Apellidos", "Dirección", "Población", "Código Postal", "Teléfono", "Correo Electrónico", "Usuario", "Contraseña");
-  // usuario1.guardarUsuario();
-  
-  // let usuario2 = new Usuario("Usuario");
-  // usuario2.recuperarUsuario();
+
 
 

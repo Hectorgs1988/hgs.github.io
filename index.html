@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <link rel="stylesheet" href="css/style.css">
+      <meta charset="utf-8">
+      <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+      <link rel="stylesheet" href="css/style.css">
     </head>
 
 
     <body>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> -->
-        
-       
-
         <form id="loginForm">
           <input type="text" id="username" placeholder="Nombre de usuario" required>
           <input type="password" id="password" placeholder="Contraseña" required>
           <button type="submit"> Aceptar</button>
-          <button type="button" id="registerButton">
+          <button type="button" id="newUser">
             <a href="register.html" style="text-decoration: none; color: inherit;">Nuevo Usuario</a>
-        </button>
-        
+          </button>
       </form>
-        
         
         <script src="js/user.js"></script>
         
@@ -54,7 +48,6 @@
       alert("No existe una cuenta con ese nombre de usuario. Por favor, regístrate primero.");
     }
   });
-
         </script>
     </body>
 </html>

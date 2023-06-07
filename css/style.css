@@ -63,21 +63,16 @@ button {
 
 /* Estilo para el botón de nuevo usuario */
 #registerButton {
-    background-color: #9dc2b7;  /* Un tono de verde */
+    background-color: #ffe177;  /* Un tono de verde */
     color: #1f7551;
-    
 }
 
-/*BOTON DE REGISTRARSE DENTRO DEL FORMULARIO DE REGISTRO */
-input[type='submit'] {
-    background-color: #ffe177; /* Sustituye esto por el color de fondo que desees */
-    color: #1f7551; /* Sustituye esto por el color de texto que desees */
-    font-weight: bold;
-  }
-  
-  
+#newUser {
+    background-color: #9dc2b7;  /* Un tono de verde */
+    color: #1f7551;
+}
 
-
+  
 /*ESTILOS PARA EL FORMULARIO DE REGISTRO*/
 #registroFormulario {
     position: absolute;
