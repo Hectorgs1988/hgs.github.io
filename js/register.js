@@ -62,14 +62,25 @@ document.getElementById("registerButton").addEventListener("click", function(eve
         return;
     }
 
-    var usuariosExistentes = Usuario.deserialize();
+    // var usuariosExistentes = Usuario.deserialize();
 
-    if (usuariosExistentes !== null) {
-        if (usuariosExistentes.some(user => user.usuario === usuario)) {
-            alert('El nombre de usuario ya está en uso.');
-            return;
-        }
-    }
+    // if (usuariosExistentes !== null) {
+    //     if (usuariosExistentes.some(user => user.usuario === usuario)) {
+    //         alert('El nombre de usuario ya está en uso.');
+    //         return;
+    //     }
+    // }
+
+    let usuariosExistentes = Usuario.deserialize();
+
+if (usuariosExistentes.some(user => user.usuario === u)) {
+    alert('El nombre de usuario ya está en uso.');
+    return;
+}
+
+usuariosExistentes.push(user); // Agrega el nuevo usuario a la lista
+Usuario.serialize(usuariosExistentes); // Guarda la lista actualizada en localStorage
+
     
 
     if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(contraseña)) {

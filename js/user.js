@@ -12,28 +12,41 @@ class Usuario {
       this.contraseña = contraseña;
     }
 
-    static serialize(user){
-      let userObj = {
-        nombre: user.nombre,
-        apellidos: user.apellidos,
-        direccion: user.direccion,
-        poblacion: user.poblacion,
-        codigoPostal: user.codigoPostal,
-        telefono: user.telefono,
-        correoElectronico: user.correoElectronico,
-        usuario: user.usuario,
-        contraseña: user.contraseña,
-      }
-      localStorage.setItem('currentUser', JSON.stringify(userObj));
-    }
+    // static serialize(user){
+    //   let userObj = {
+    //     nombre: user.nombre,
+    //     apellidos: user.apellidos,
+    //     direccion: user.direccion,
+    //     poblacion: user.poblacion,
+    //     codigoPostal: user.codigoPostal,
+    //     telefono: user.telefono,
+    //     correoElectronico: user.correoElectronico,
+    //     usuario: user.usuario,
+    //     contraseña: user.contraseña,
+    //   }
+    //   localStorage.setItem('currentUser', JSON.stringify(userObj));
+    // }
+    
+    static serialize(usersArray){
+      localStorage.setItem('users', JSON.stringify(usersArray));
+  }
+
+
+    // static deserialize() {
+    //   let userObj = JSON.parse(localStorage.getItem('currentUser'));
+    //   if (userObj) {
+    //     return new Usuario(userObj.nombre, userObj.apellidos, userObj.direccion, userObj.poblacion, userObj.codigoPostal, userObj.telefono, userObj.correoElectronico, userObj.usuario, userObj.contraseña);
+    //   }
+    //   return null;
+    // }
 
     static deserialize() {
-      let userObj = JSON.parse(localStorage.getItem('currentUser'));
-      if (userObj) {
-        return new Usuario(userObj.nombre, userObj.apellidos, userObj.direccion, userObj.poblacion, userObj.codigoPostal, userObj.telefono, userObj.correoElectronico, userObj.usuario, userObj.contraseña);
+      let usersArray = JSON.parse(localStorage.getItem('users'));
+      if (usersArray) {
+          return usersArray.map(userObj => new Usuario(userObj.nombre, userObj.apellidos, userObj.direccion, userObj.poblacion, userObj.codigoPostal, userObj.telefono, userObj.correoElectronico, userObj.usuario, userObj.contraseña));
       }
-      return null;
-    }
+      return [];
+  }
 
     static retrieveUser() {
       return Usuario.deserialize();
