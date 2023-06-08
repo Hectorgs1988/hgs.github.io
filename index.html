@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+      <link rel="stylesheet" href="css/style.css">
+    </head>
+
+
+    <body>
+
+      <h1 class="titulo">Tu aplicación web para la lista de la Compra!</h1>
+        <form id="loginForm">
+          <input type="text" id="username" placeholder="Nombre de usuario" required>
+          <input type="password" id="password" placeholder="Contraseña" required>
+          <button class="aceptar" type="submit"> Aceptar</button>
+          <button class="newUser">
+          <a href="register.html" style="text-decoration: none; color: inherit;">Nuevo Usuario</a>
+          </button>
+      </form>
+        
+        <script src="js/user.js"></script>
+        
+        <script>
+  //LOGIN
+  document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault();
+  
+    // Obtiene el nombre de usuario y la contraseña ingresados por el usuario
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+  
+    // Obtiene los datos del usuario guardados en el localStorage
+    let userStored = localStorage.getItem(username);
+    if(userStored){
+      // Los datos en el localStorage están en formato JSON, por lo que necesitamos convertirlos a un objeto JavaScript
+      let user = JSON.parse(userStored);
+  
+      // Comprueba si la contraseña ingresada coincide con la guardada en el localStorage
+      if(user.contraseña === password){
+        Usuario.serialize(user);
+        // Si la contraseña es correcta, redirige al usuario a la página principal
+        window.location.href = "products.html";
+      } else {
+        // Si la contraseña es incorrecta, muestra un mensaje de error
+        alert("Contraseña incorrecta. Por favor, inténtalo de nuevo.");
+      }
+    } else {
+      // Si no existe un usuario con el nombre de usuario ingresado, muestra un mensaje de error
+      alert("No existe una cuenta con ese nombre de usuario. Por favor, regístrate primero.");
+    }
+  });
+        </script>
+    </body>
+</html>
