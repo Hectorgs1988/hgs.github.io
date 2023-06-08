@@ -16,6 +16,19 @@ for (var poblacion in poblacionesCodigosPostales) {
     selectPoblacion.add(option);
 }
 
+// Asumiendo que tienes un elemento de entrada para el código postal con el id 'codigoPostal'
+var inputCodigoPostal = document.getElementById('codigoPostal');
+
+// Controlador de eventos para cuando se cambia la selección en el select de poblaciones
+selectPoblacion.addEventListener('change', function() {
+    // Buscar el código postal para la población seleccionada
+    var codigoPostal = poblacionesCodigosPostales[this.value];
+
+    // Actualizar el valor del elemento input del código postal
+    inputCodigoPostal.value = codigoPostal;
+});
+
+
 
 document.getElementById("registerButton").addEventListener("click", function(event){
     event.preventDefault();
@@ -62,14 +75,7 @@ document.getElementById("registerButton").addEventListener("click", function(eve
         return;
     }
 
-    // var usuariosExistentes = Usuario.deserialize();
-
-    // if (usuariosExistentes !== null) {
-    //     if (usuariosExistentes.some(user => user.usuario === usuario)) {
-    //         alert('El nombre de usuario ya está en uso.');
-    //         return;
-    //     }
-    // }
+   
 
     let usuariosExistentes = Usuario.deserialize();
 
