@@ -2,7 +2,7 @@ class List {
     constructor(usuario, fecha, productos){
         this.usuario = usuario;
         this.fecha = fecha;
-        this.productos = productos;  // Array bidimensional: [["producto1", cantidad1], ["producto2", cantidad2], ...]
+        this.productos = productos;
     }
   
     getUsuario() {
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function getUltimaLista() {
-    // Obtén todas las claves de localStorage
+    // Obtiene todas las claves de localStorage
     let keys = Object.keys(localStorage);
 
     // Filtrar solo las claves que tienen formato de fecha ISO

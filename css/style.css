@@ -2,18 +2,17 @@
     --primary-color: #f8f6eb;
     --secondary-color: #1f7551;
     --tertiary-color: #1f7551;
-    /* Y así sucesivamente para el resto de tus colores */
-  }
+}
 
-  
+
 h1 {
     color: var(--secondary-color);
-  }
-  
-  p {
+}
+
+p {
     color: var(--tertiary-color);
     font-weight: bold;
-  }
+}
 
 
 body {
@@ -23,22 +22,22 @@ body {
     margin: 0 auto;
 }
 
-.titulo{
+.titulo {
     text-align: center;
     margin-top: 100px;
 }
 
 /*FORMULARIO DE INICIO DE SESION*/
-#loginForm{
+#loginForm {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px; 
+    width: 300px;
     padding: 20px;
     background-color: #1f7551;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    text-align: center;  /* Alineación de elementos al centro */
+    box-shadow: 0px 0px 10px #1f7551;
+    text-align: center;
     border-radius: 15px;
 }
 
@@ -50,8 +49,8 @@ input {
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #1f7551;
-    display: block; /* Hace que los elementos de entrada sean bloques para que tengan su propia línea */
-    margin: 0 auto; /* Centra los elementos de entrada en su línea */
+    display: block;
+    margin: 0 auto;
 }
 
 button {
@@ -59,21 +58,22 @@ button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color:#ffe177;
+    background-color: #ffe177;
     color: #1f7551;
-    display: block; /* Hace que los botones sean bloques para que tengan su propia línea */
-    margin: 10px auto; /* Centra los botones en su línea y añade un margen de 10px arriba y abajo */
+    display: block;
+    margin: 10px auto;
     font-weight: bold;
 }
 
 button:hover {
-    background-color:#1f7551;;
+    background-color: #1f7551;
+    ;
     color: #ffe177;
 }
 
 /* Estilo para el botón de nuevo usuario */
 #registerButton {
-    background-color: #ffe177;  /* Un tono de verde */
+    background-color: #ffe177;
     color: #1f7551;
 }
 
@@ -82,34 +82,34 @@ button:hover {
     color: #ffe177;
 }
 
-.aceptar{
+.aceptar {
     background-color: #ffe177;
     color: #1f7551;
 }
 
-.aceptar:hover{
+.aceptar:hover {
     background-color: #1f7551;
     color: #ffe177;
 }
 
 .newUser {
-    background-color: #9dc2b7;  /* Un tono de verde */
+    background-color: #9dc2b7;
     color: #1f7551;
 }
 
 .newUser:hover {
-    background-color: #1f7551;  /* Un tono de verde */
+    background-color: #1f7551;
     color: #9dc2b7;
 }
 
-  
+
 /*ESTILOS PARA EL FORMULARIO DE REGISTRO*/
 #registroFormulario {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px; 
+    width: 300px;
     padding: 20px;
     background-color: #1f7551;
     box-shadow: 0px 0px 10px #1f7551;
@@ -118,92 +118,94 @@ button:hover {
 }
 
 input {
-    background-color: #f8f6eb; /* Sustituye esto por tu color de fondo deseado */
-  }
-  
-  input::placeholder {
-    color: #1f7551; /* Sustituye esto por tu color de placeholder deseado */
-  }
-  
+    background-color: #f8f6eb;
+}
 
-/*SELECT DENTRO DEL FORMULARIO DE REGISTRO*/
-#registroFormulario select {
-    width: 90%; /* Asegura que ocupa todo el ancho disponible */
-    height: 35px; /* Elige la altura que prefieras */
-    margin-bottom: 10px; /* Margen inferior, similar a los inputs */
-    padding: 5px; /* Espacio interior para el texto */
-    font-size: 14px; /* Tamaño de la fuente */
-    border: none; /* Elimina el borde por defecto */
-    border-radius: 3px; /* Añade esquinas redondeadas */
-    background-color: #f8f6eb; /* Color de fondo */
+input::placeholder {
     color: #1f7551;
 }
 
 
-#guardar{
+/*SELECT DENTRO DEL FORMULARIO DE REGISTRO*/
+#registroFormulario select {
+    width: 90%;
+    height: 35px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f8f6eb;
+    color: #1f7551;
+}
+
+
+#guardar {
     margin-top: 50px;
     background-color: #9dc2b7;
     color: #1f7551;
     width: 20%;
 }
-#guardar:hover{
+
+#guardar:hover {
     background-color: #1f7551;
     color: #9dc2b7;
 }
 
-#mostrar{
+#mostrar {
     background-color: #9dc2b7;
     color: #1f7551;
     width: 20%;
 }
 
-#mostrar:hover{
+#mostrar:hover {
     background-color: #1f7551;
     color: #9dc2b7;
 }
 
-#listasBoton{
+#listasBoton {
     background-color: #9dc2b7;
     color: #1f7551;
     width: 20%;
 }
-#listasBoton:hover{
+
+#listasBoton:hover {
     background-color: #1f7551;
     color: #9dc2b7;
 }
 
-#salir{
-    background-color:#1f7551 ;
+#salir {
+    background-color: #1f7551;
     color: #ffe177;
     width: 20%;
     margin-bottom: 50px;
 }
 
-#salir:hover{
-    background-color:#ffe177;
+#salir:hover {
+    background-color: #ffe177;
     color: #1f7551;
 }
 
-#printButton{
-    background-color:#ffe177;
-    color: #1f7551;
-    width: 20%;
-}
-
-#printButton:hover{
-    background-color:#1f7551 ;
-    color: #ffe177;
-}
-
-#Regresar{
-    background-color:#ffe177;
+#printButton {
+    background-color: #ffe177;
     color: #1f7551;
     width: 20%;
 }
 
-#Regresar:hover{
-    background-color:#1f7551 ;
+#printButton:hover {
+    background-color: #1f7551;
     color: #ffe177;
+}
+
+#Regresar {
+    background-color: #1f7551;
+    color: #ffe177;
+    width: 20%;
+}
+
+#Regresar:hover {
+    background-color: #ffe177;
+    color: #1f7551;
 }
 
 #productos {
@@ -241,8 +243,8 @@ input {
 
 /*MENSAJE TEMPORAL*/
 #message {
-    position: fixed; 
-    bottom: 20px; 
+    position: fixed;
+    bottom: 20px;
     right: 20px;
     background-color: #1f7551;
     color: #ffe177;
@@ -269,27 +271,19 @@ input {
 }
 
 /*LINEA HORIZONTAL*/
-hr{
-    height: 0.1px; /* Esto controla el grosor de la línea */
-    background-color: #9dc2b7; /* Esto controla el color de la línea */ 
+hr {
+    height: 0.1px;
+    background-color: #9dc2b7;
     width: 80%;
 }
 
 /*LISTAS*/
 
-#displayListas{
+#displayListas {
     text-align: center;
 }
 
-#listaCompras{
+#listaCompras {
     text-align: center;
     margin-bottom: 50px;
 }
-
-
-
-
-
-
-
-
